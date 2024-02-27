@@ -24,10 +24,12 @@ services:
       MYSQL_DATABASE: dockerExample1
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
+    platform: linux/amd64
     container_name: phpmyadmin
     ports:
       - 8080:80
     environment:
       PMA_PASSWORD: root1234
       PMA_USER: root
+      PMA_PORT: 3360
       PMA_HOSTS: mysql
