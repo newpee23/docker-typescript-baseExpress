@@ -18,7 +18,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - "./data:/var/lib/mysql"
+      - mysql_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root1234
       MYSQL_DATABASE: dockerExample1
@@ -33,3 +33,10 @@ services:
       PMA_USER: root
       PMA_PORT: 3360
       PMA_HOSTS: mysql
+volumes:
+  mysql_data:
+    driver: local
+  app_data:
+    driver: local
+  node_modules_data:
+    driver: local
