@@ -1,8 +1,8 @@
 import express from "express";
-import { getMemberTest } from "../controllers/memberController";
+import { getMemberTestApi } from "../controllers/memberController";
 
 const router = express.Router(); //ใช้สร้างเส้นทาง
 // http://localhost:4000/api/member
-router.get("/test", getMemberTest);
+router.get("/test", getMemberTestApi);
 
 export = router;
