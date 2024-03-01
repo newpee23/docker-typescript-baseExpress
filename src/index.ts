@@ -1,10 +1,11 @@
+import bodyParser from 'body-parser';
 import express, { Request, Response } from 'express';
 
 import fs from 'fs';
 import path from 'path';
 
 const app = express();
-
+app.use(bodyParser.json({limit:'20mb'})); // จำกัดขนาดข้อมูลที่ยิงมาจากหน้าบ้าน
 const routesPath: string = path.join(__dirname, './routes'); // กำหนดพาธเต็มของไดเรกทอรี routes
 
 // Route กำหนด path ของ routes อัตโนมัติ
